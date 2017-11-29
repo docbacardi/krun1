@@ -147,8 +147,6 @@ var ulCameraX;
 var ulCameraY;
 
 
-var tMessageArea;
-
 /* This is a notification from an asyncronous handler like the "onblur" event that a pause of the game is requested. */
 var fRequestPause;
 
@@ -635,11 +633,7 @@ function camera_update_position(ulCameraNewX, ulCameraNewY)
 			}
 			
 			/* Now the number of free buffers must match the wanted. */
-			if( aFree.length!=aNeed.length )
-			{
-				tMessageArea.add("Argh!");
-			}
-			else
+			if( aFree.length==aNeed.length )
 			{
 				var tBuf;
 				var uiSrc;
@@ -836,8 +830,6 @@ function collision_action_gold(tCollisionTestMode, uiLayer, uiTilePos)
 		atRenderStack[uiLayer].atTiles[uiTilePos] = 0;
 		/* Request a redraw of the tile. */
 		aucReRe[uiTilePos>>>3] |= 1<<(uiTilePos&7);
-
-		tMessageArea.add('Gold!');
 
 		/* Search the gold in the position table. */
 		var uiTargetPos = tMapParsed.atGold2Target[uiTilePos];
@@ -2682,7 +2674,6 @@ function load_error(tLoader)
 {
 	/* Append a message to the message area. */
 	var strMsg = "Failed to load the file " + tLoader.get_current_url();
-	tMessageArea.add(strMsg);
 }
 
 
@@ -2713,9 +2704,6 @@ function game_request_resume()
 
 function game_run()
 {
-	/* Create the message area. */
-	tMessageArea = new MessageArea('messageArea', 10);
-	
 	/* Does the function requestAnimationFrame already exist? */
 	if ( !window.requestAnimationFrame )
 	{
@@ -2739,12 +2727,7 @@ function game_run()
 		}
 	}
 	
-	if( !window.requestAnimationFrame )
-	{
-		var strMsg = 'Failed to request animation frames.';
-		tMessageArea.add(strMsg);
-	}
-	else
+	if( window.requestAnimationFrame )
 	{
 		/* Initialize the tile size to 32x32. */
 		sizTileXPixels = 32;

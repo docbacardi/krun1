@@ -122,7 +122,6 @@ function joystick_swipe_handlerTouchEnd(tEvent)
 
 function joystick_swipe_handlerTouchCancel(tEvent)
 {
-	tMessageArea.add("touch cancel");
 	joystick_swipe_handlerTouchEnd(tEvent);
 }
 

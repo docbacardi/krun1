@@ -15,7 +15,7 @@ aztec_pig_level1.json: aztec_pig_level1.tmx
 	python2.7 map_optimize.py aztec_pig_level1.tmx aztec_pig_level1.json
 
 
-krun1.js: game.js js/joystick.js js/joystick_keyboard.js js/joystick_swipe.js js/loader.js js/message_area.js
+krun1.js: game.js js/joystick.js js/joystick_keyboard.js js/joystick_swipe.js js/loader.js
 	closure-compiler $(foreach src,$^,--js $(src)) --js_output_file krun1.js --warning_level VERBOSE --compilation_level ADVANCED_OPTIMIZATIONS --language_in ECMASCRIPT5_STRICT
 
 install: aztec_pig_level1.json index.html krun1.js player_sprite.json
