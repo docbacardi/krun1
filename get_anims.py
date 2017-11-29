@@ -48,14 +48,14 @@ def extract_sprites(strImageName, ulSpriteSize_X, ulSpriteSize_Y, uiNumberofSpri
 atPlayerAnimation = {}
 
 atLifeLost = {}
-atLifeLost['sprites'] = extract_sprites('adventure_pig_angel_as_tiles.png', 32, 32, 3)
+atLifeLost['sprites'] = extract_sprites('player_animation/adventure_pig_angel_as_tiles.png', 32, 32, 3)
 atLifeLost['sequence'] = [0, 1, 2, 2, 1]
 atPlayerAnimation['life_lost'] = atLifeLost
 
 atWalkJump = {}
-atWalkJump['sprites'] = extract_sprites('adventure_pig_as_tiles.png', 32, 32, 10)
-atWalkJump['sprites'].extend(extract_sprites('adventure_pig_climbing_as_tiles.png', 32, 32, 3))
-atWalkJump['sprites'].extend(extract_sprites('adventure_pig_dead_as_tiles.png', 32, 32, 1))
+atWalkJump['sprites'] = extract_sprites('player_animation/adventure_pig_as_tiles.png', 32, 32, 10)
+atWalkJump['sprites'].extend(extract_sprites('player_animation/adventure_pig_climbing_as_tiles.png', 32, 32, 3))
+atWalkJump['sprites'].extend(extract_sprites('player_animation/adventure_pig_dead_as_tiles.png', 32, 32, 1))
 atWalkJump['sequence_walk_left'] = [0, 1, 2, 1, 0, 3, 4, 3]
 atWalkJump['sequence_walk_right'] = [5, 6, 7, 6, 5, 8, 9, 8]
 atWalkJump['jump_left'] = 4
