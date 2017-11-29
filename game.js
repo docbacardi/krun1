@@ -392,8 +392,6 @@ function animation_remove_all_clones(atList, ulTileReference)
 
 function animation_end_mushroom_switch_activated(tAnimation)
 {
-	tMessageArea.add("Mushroom switch active!");
-
 	var uiTilePos = tAnimation.ulTileReference;
 	var uiLayer = tAnimation.uiLayer;
 
@@ -839,7 +837,6 @@ function collision_action_gold(tCollisionTestMode, uiLayer, uiTilePos)
 		/* Request a redraw of the tile. */
 		aucReRe[uiTilePos>>>3] |= 1<<(uiTilePos&7);
 
-		/* TODO: remove this */
 		tMessageArea.add('Gold!');
 
 		/* Search the gold in the position table. */
