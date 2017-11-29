@@ -25,5 +25,10 @@ install: aztec_pig_level1.json index.html krun1.js player_sprite.json
 	cp player_sprite.json docs/
 
 release: aztec_pig_level1.json frame.html krun1.js player_sprite.json
+	mkdir -p rel
+	cp aztec_pig_level1.json rel/
+	cp frame.html rel/index.html
+	cp krun1.js rel/
+	cp player_sprite.json rel/
 	rm -rf krun1.zip
-	zip -9 krun1.zip aztec_pig_level1.json frame.html krun1.js player_sprite.json
+	cd rel && zip -9 ../krun1.zip aztec_pig_level1.json index.html krun1.js player_sprite.json

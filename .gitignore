@@ -3,5 +3,8 @@
 /krun1.js
 /player_sprite.json
 
+# Ignore the complete rel folder.
+/rel/
+
 # Ignore all compiled python modules.
 *.pyc
