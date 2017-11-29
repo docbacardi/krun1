@@ -1,6 +1,6 @@
 # Ignore all compiled files.
 /aztec_pig_level1.json
-/optimized.js
+/krun1.js
 /player_sprite.json
 
 # Ignore all compiled python modules.
