@@ -1,4 +1,4 @@
-.PHONY: all clean install
+.PHONY: all clean install release
 
 all: aztec_pig_level1.json player_sprite.json krun1.js
 
@@ -23,3 +23,7 @@ install: aztec_pig_level1.json index.html krun1.js player_sprite.json
 	cp index.html docs/
 	cp krun1.js docs/
 	cp player_sprite.json docs/
+
+release: aztec_pig_level1.json frame.html krun1.js player_sprite.json
+	rm -rf krun1.zip
+	zip -9 krun1.zip aztec_pig_level1.json frame.html krun1.js player_sprite.json
