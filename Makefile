@@ -17,3 +17,9 @@ aztec_pig_level1.json: aztec_pig_level1.tmx
 
 krun1.js: game.js js/joystick.js js/joystick_keyboard.js js/joystick_swipe.js js/loader.js js/message_area.js
 	closure-compiler $(foreach src,$^,--js $(src)) --js_output_file krun1.js --warning_level VERBOSE --compilation_level ADVANCED_OPTIMIZATIONS --language_in ECMASCRIPT5_STRICT
+
+install: aztec_pig_level1.json index.html krun1.js player_sprite.json
+	cp aztec_pig_level1.json docs/
+	cp index.html docs/
+	cp krun1.js docs/
+	cp player_sprite.json docs/
